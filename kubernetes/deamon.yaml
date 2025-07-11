@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: nginx # Replace with actual image name and tag, e.g., sirishassss/myapp:latest
+        ports:
+        - containerPort: 80        # Optional: if your app listens on a specific port
